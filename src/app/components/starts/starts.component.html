@@ -1,0 +1,7 @@
+<div
+  class="d-flex align-items-center mb-1"
+  [ngClass]="{'justify-content-center':center}"
+>
+  <small *ngFor="let r of [1, 2, 3, 4, 5]" [ngClass]="getClass(r)"></small>
+  <small>({{ count }})</small>
+</div>
