@@ -1,0 +1,31 @@
+<!-- Breadcrumb Start -->
+<div class="container-fluid">
+  <div class="row px-xl-5">
+    <div class="col-12">
+      <nav class="breadcrumb bg-light mb-30">
+        <a class="breadcrumb-item text-dark" href="#">Home</a>
+        <a class="breadcrumb-item text-dark" href="#">Shop</a>
+        <span class="breadcrumb-item active">Shopping Cart</span>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumb End -->
+
+<!-- Cart Start -->
+<div class="container-fluid">
+  <div class="row px-xl-5">
+    <div class="col-lg-8 table-responsive mb-5">
+      <app-cart-table [cartLines]="cartLines" (limitAlert)="sendAlert($event)"></app-cart-table>
+    </div>
+    <div class="col-lg-4">
+      <app-cart-coupon></app-cart-coupon>
+      <app-cart-total
+        [subtotal]="getSubTotal()"
+        [shipping]="getShipping()"
+        [total]="getTotal()"
+      ></app-cart-total>
+    </div>
+  </div>
+</div>
+<!-- Cart End -->

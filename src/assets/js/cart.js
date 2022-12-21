@@ -1,15 +1,9 @@
-const products = JSON.parse(localStorage.getItem("products") || "[]");
-
 const getShipping = () => {
   return products.length * 10;
 };
 
 const getSubTotal = () => {
-  if (products.length > 0) {
-    return products.map((p) => p.price * p.quantity).reduce((a, e) => (a += e));
-  } else {
-    return 0;
-  }
+  return products.map((p) => p.price * p.quantity).reduce((a, e) => (a += e));
 };
 
 const getTotal = () => getShipping() + getSubTotal();
@@ -28,7 +22,6 @@ const remove = (i) => {
 };
 
 const renderHTML = () => {
-  localStorage.setItem(`products`, JSON.stringify(products));
   document.getElementById("products").innerHTML = "";
   products.forEach((p, i) => {
     document.getElementById("products").innerHTML += getProductHTMLRow(p, i);
@@ -36,7 +29,6 @@ const renderHTML = () => {
   document.getElementById("shipping").innerHTML = `$${getShipping()}`;
   document.getElementById("sub-total").innerHTML = `$${getSubTotal()}`;
   document.getElementById("total").innerHTML = `$${getTotal()}`;
-  // input update data
 };
 
 const getProductHTMLRow = (p, i) => {
@@ -68,4 +60,5 @@ const getProductHTMLRow = (p, i) => {
 </tr>`;
 };
 
+const products = JSON.parse(localStorage.getItem("products") || "[]");
 renderHTML();
