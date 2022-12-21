@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Category } from 'src/app/interfaces/category';
 
 @Component({
   selector: 'app-categories',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent {
-  categories: any[] = [
+  categories: Category[] = [
     {
       categoryName: 'Category 1',
       imageUrl: '/assets/img/cat-1.jpg',

@@ -13,6 +13,8 @@ import { DetailComponent } from './components/layouts/detail/detail.component';
 import { ShoppingCartComponent } from './components/layouts/shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/layouts/checkout/checkout.component';
 import { ContentComponent } from './components/layouts/contact/contact.component';
+import { ProductComponent } from './components/product/product.component';
+import { StarsComponent } from './components/stars/stars.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ContentComponent } from './components/layouts/contact/contact.component
     ShoppingCartComponent,
     CheckoutComponent,
     ContentComponent,
+    ProductComponent,
+    StarsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
